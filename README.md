@@ -268,6 +268,19 @@ docker compose up --build
 
 ---
 
+## 🧪 Tests (Vitest + Supertest)
+
+```bash
+# 1) Crear DB de test (una vez)
+docker compose exec db psql -U postgres -c "CREATE DATABASE propel_test;"
+
+# 2) Ejecutar tests (usa propel_test por env)
+npm run test
+
+```
+
+---
+
 ## 🛡️ CORS
 
 Por defecto habilitado para `http://localhost:5173` (Vite).  
@@ -278,7 +291,6 @@ app.use(cors({ origin: ['http://localhost:5173'], credentials: false }));
 ```
 
 ---
-
 ## ✅ Notas y buenas prácticas
 
 - **Imports ESM + NodeNext**: usa extensión `.js` en imports **relativos** (`./schema.js`). Paquetes (p. ej. `"express"`, `"pg"`) no llevan extensión.

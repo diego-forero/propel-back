@@ -9,7 +9,9 @@
     "start": "node dist/index.js",
     "db:gen": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:seed": "tsx src/db/seed.ts"
+    "db:seed": "tsx src/db/seed.ts",
+    "test": "cross-env NODE_ENV=test DATABASE_URL=postgres://postgres:postgres@localhost:5433/propel_test vitest run",
+    "test:watch": "cross-env NODE_ENV=test DATABASE_URL=postgres://postgres:postgres@localhost:5433/propel_test vitest"
   },
   "repository": {
     "type": "git",
@@ -34,9 +36,13 @@
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
     "@types/pg": "^8.15.5",
+    "@types/supertest": "^6.0.3",
+    "cross-env": "^10.0.0",
     "nodemon": "^3.1.10",
+    "supertest": "^7.1.4",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.5",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
   }
 }
