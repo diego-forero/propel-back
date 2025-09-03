@@ -271,6 +271,9 @@ docker compose up --build
 ## 🧪 Tests (Vitest + Supertest)
 
 ```bash
+# 0) Levantar Docker (si no se ha creado)
+ docker compose up -d
+
 # 1) Crear DB de test (una vez)
 docker compose exec db psql -U postgres -c "CREATE DATABASE propel_test;"
 
