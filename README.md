@@ -56,10 +56,10 @@ curl http://localhost:4000/health
   docker compose exec api node dist/db/seed.js
   ```
 
-# Detener y borrar contenedores (la data en pg_data PERSISTE)
+### Detener y borrar contenedores (la data en pg_data PERSISTE)
 docker compose down
 
-# Detener, borrar contenedores y BORRAR volúmenes (DB limpia)
+### Detener, borrar contenedores y BORRAR volúmenes (DB limpia)
 docker compose down -v
 
 
@@ -246,13 +246,10 @@ docker run --rm -p 4000:4000 \
   -e DATABASE_URL=postgres://postgres:postgres@host.docker.internal:5433/propel \
   propel-api
 ```
-> En Linux, si no existe `host.docker.internal` agrega: `--add-host=host.docker.internal:host-gateway`.
 
 ### Orquestado (DB + API)
 ```bash
 docker compose up --build
-# Seed dentro del contenedor de la API:
-docker compose exec api node dist/db/seed.js
 ```
 
 ---
@@ -292,7 +289,6 @@ app.use(cors({ origin: ['http://localhost:5173'], credentials: false }));
   ```bash
   npm run typecheck
   ```
-- **Seed**: no corre automáticamente; ejecútalo cuando necesites pre-cargar catálogos.
 
 ---
 
