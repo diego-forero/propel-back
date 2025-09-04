@@ -56,12 +56,15 @@ curl http://localhost:4000/health
   docker compose exec api node dist/db/seed.js
   ```
 
-### Detener y borrar contenedores (la data en pg_data PERSISTE)
+> Detener y borrar contenedores (la data en pg_data PERSISTE)
+```bash
 docker compose down
+```bash
 
-### Detener, borrar contenedores y BORRAR volúmenes (DB limpia)
+>  Detener, borrar contenedores y BORRAR volúmenes (DB limpia)
+```bash
 docker compose down -v
-
+```bash
 
 ---
 
